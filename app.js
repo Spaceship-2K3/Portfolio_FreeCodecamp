@@ -16,12 +16,6 @@ function PageTransitions() {
     allSections.addEventListener("click", function (e) {
         let id = e.target.dataset.id;
         if (id) {
-            // // todo : remove selected from the other btns
-            // sectBtns.forEach((btn) => {
-            //     btn.classList.remove("active");
-            // });
-            // e.target.classList.add("active");
-
             // todo : hide other sections
             sections.forEach((section) => {
                 section.classList.remove("active");
@@ -30,6 +24,13 @@ function PageTransitions() {
             let element = document.getElementById(id);
             element.classList.add("active");
         }
+    });
+
+    // todo : Toggle theme
+    const themeBtn = document.querySelector(".theme-btn");
+    themeBtn.addEventListener("click", () => {
+        let element = document.body;
+        element.classList.toggle("light-mode");
     });
 }
 
